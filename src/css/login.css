@@ -1,0 +1,120 @@
+/* Elegant Light-Themed CSS for Login Page */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --background-light: #ffffff;
+  --foreground-light: #213547;
+  --button-bg-light: #f0f4ff;
+  --input-border: #ccc;
+  --input-focus-border: #4CAF50;
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Colors */
+  color: var(--foreground-light);
+  background-color: var(--background-light);
+  @apply m-0 flex items-center justify-center min-w-[320px] min-h-screen bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100;
+}
+
+a {
+  @apply font-medium text-inherit;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+h1, h2 {
+  @apply text-4xl font-bold leading-tight;
+  color: var(--foreground-light);
+  text-align: center;
+}
+
+button {
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent px-6 py-3 text-lg font-semibold shadow-md;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input[type="text"], input[type="password"] {
+  @apply w-full px-4 py-3 mb-6 border rounded-md text-base;
+  border: 1px solid var(--input-border);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: var(--input-focus-border);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+.notification {
+  @apply my-6 px-8 py-5 rounded-lg shadow-md text-base;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.notification.sucesso {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.notification.erro {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.overflow-auto {
+  @apply overflow-y-auto max-h-[400px] border p-6 rounded-lg;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+table {
+  @apply w-full border-collapse shadow-md;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  @apply px-6 py-4 text-left border-b;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  @apply bg-gray-100 font-bold;
+  color: #444;
+}
+
+tr:hover {
+  @apply bg-gray-200;
+  transition: background-color 0.3s;
+}
